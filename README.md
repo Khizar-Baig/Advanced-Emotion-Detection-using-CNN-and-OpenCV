@@ -52,12 +52,12 @@ Uniform Manifold Approximation and Projection (UMap) is employed to reduce the d
 
 
 b. t-SNE
-t-Distributed Stochastic Neighbor Embedding (t-SNE) is utilized for its ability to visualize high-dimensional data in a two-dimensional or three-dimensional space. This technique helps to reveal patterns and relationships within the facial expression dataset. The images show 2D and 3D t-SNE visualizations of image data, a method that simplifies high-dimensional data while maintaining point distances. The 2D plot reveals a dense point distribution across two axes, with colors indicating classes like 'angry', 'happy', and 'surprise', suggesting various expressions. The 3D plot adds another dimension but still shows intermixed data without clear separation. t-SNE helps understand data structure, yet the overlap of expressions implies a need for further refinement. These visualizations are foundational for deeper analysis and can direct further steps in data processing and model optimization.
+t-Distributed Stochastic Neighbor Embedding (t-SNE) is utilized for its ability to visualize high-dimensional data in a two-dimensional or three-dimensional space. This technique helps to reveal patterns and relationships within the facial expression dataset. The images show 2D and 3D t-SNE visualizations of image data, a method that simplifies high-dimensional data while maintaining point distances. The 2D plot reveals a dense point distribution across two axes, with colors indicating classes like 'angry', 'happy', and 'surprise', suggesting various expressions. The 3D plot adds another dimension but still shows intermixed data without clear separation. t-SNE helps understand the data structure, yet the overlap of expressions implies a need for further refinement. These visualizations are foundational for deeper analysis and can direct further steps in data processing and model optimization.
 
 ![image](https://github.com/Khizar-Baig/CS584-Final-Project/assets/59732957/7e63fbd2-0421-4e96-85b7-8105036a823b)
 
 c. PCA
-Principal Component Analysis (PCA) is applied to further reduce dimensionality and highlight the most significant features contributing to the variability in facial expressions. PCA assists in preprocessing the data before model training. The 2D and 3D PCA visualizations represent a dataset with various expressions labeled in color. PCA, a technique to reduce data dimensions, shows points spread across principal components (PCs). In both visualizations, the points are intermixed, indicating a complex underlying structure with no distinct expression clusters. This suggests that while PCA has reduced data complexity, discerning clear patterns for expressions like 'angry' or 'happy' may require additional analysis or different techniques. These visualizations are critical for identifying nuances in data, guiding further model development and feature extraction to enhance classification tasks.
+Principal Component Analysis (PCA) is applied to further reduce dimensionality and highlight the most significant features contributing to the variability in facial expressions. PCA assists in preprocessing the data before model training. The 2D and 3D PCA visualizations represent a dataset with various expressions labeled in color. PCA, a technique to reduce data dimensions, shows points spread across principal components (PCs). In both visualizations, the points are intermixed, indicating a complex underlying structure with no distinct expression clusters. This suggests that while PCA has reduced data complexity, discerning clear patterns for expressions like 'angry' or 'happy' may require additional analysis or different techniques. These visualizations are critical for identifying nuances in data, guiding further model development, and feature extraction to enhance classification tasks.
 
 ![image](https://github.com/Khizar-Baig/CS584-Final-Project/assets/59732957/2dfcbfc2-ba40-49bb-beb1-5d0eb39a9a77)
 
@@ -84,7 +84,7 @@ Output Layer: The final layer is a dense layer with 7 neurons (one for each clas
 
 Model Compilation:
 The model is compiled using the Adam optimizer with a learning rate of 0.0001.
-The loss function used is categorical cross entropy, which is standard for multi-class classification problems.
+The loss function used is categorical cross-entropy, which is standard for multi-class classification problems.
 The model uses accuracy as a metric for performance evaluation.
 Training Process:
 The model is trained using a generator, allowing efficient handling of large datasets by loading data in batches.
@@ -109,7 +109,7 @@ verbose=1: Enables verbose output, providing more information about the training
 restore_best_weights=True: When training is stopped early, the model's weights are rolled back to those of the epoch with the best validation loss.
 
 Impact of Early Stopping:
-Efficiency and Prevention of Overfitting: Early Stopping is a form of regularization used to avoid overfitting. By stopping the training when the validation loss stops improving, the model is prevented from learning noise and irrelevant patterns in the training data.
+Efficiency and Prevention of Overfitting: Early Stopping is a form of regularization used to avoid overfitting. The model is prevented from learning noise and irrelevant patterns in the training data by stopping the training when the validation loss stops improving.
 Resource Optimization: It saves computational resources by terminating training early if the model ceases to improve, making the training process more efficient.
 Model Performance: By reverting to the best weights when early stopping occurs, the model will likely have better generalization performance on unseen data.
 
@@ -132,12 +132,12 @@ Tower 3: Employs a 3×3 max pooling layer followed by a  1×1 convolution.
 Concatenation and Output: The outputs of these towers are concatenated and flattened. The flattened output is then passed through a dense layer with a softmax activation function for classification.
 Compilation and Training:
 The model is compiled twice: initially without specifying the learning rate, and later with an Adam optimizer set at a learning rate of 0.001.
-Categorical cross entropy is used as the loss function, appropriate for multi-class classification tasks.
+Categorical cross-entropy is used as the loss function, appropriate for multi-class classification tasks.
 The training is conducted over 48 epochs using a generator approach, which is efficient for handling large datasets.
 Callbacks Used:
 ModelCheckpoint: Saves the best version of the model based on validation accuracy.
 EarlyStopping: Monitors the validation loss and stops training if there's no improvement after three epochs. It also restores the weights of the best epoch if early stopping is triggered.
-ReduceLROnPlateau: Reduces the learning rate by a factor of 0.2 if the validation loss does not improve, with a patience of three epochs. This helps in fine-tuning the model and potentially achieving better performance.
+ReduceLROnPlateau: Reduces the learning rate by a factor of 0.2 if the validation loss does not improve, with patience of three epochs. This helps in fine-tuning the model and potentially achieving better performance.
 
 Experiment Goals:
 Model's Performance: By using a complex architecture with multiple convolutional towers, the experiment aims to create a model capable of recognizing and classifying a wide range of visual patterns in images.
@@ -168,9 +168,11 @@ Visual feedback is an integral part of the real-time emotion detection process. 
 This project successfully combined the power of Convolutional Neural Networks (CNNs) with the real-time processing capabilities of OpenCV to create a system capable of discerning human emotions from facial images. Tackling a dataset of 35,887 grayscale images, the project explored various CNN architectures—from a foundational sequential model to a more complex Inception-like network—each honing in on the subtle nuances of emotions like happiness, sadness, anger, and surprise. The integration of advanced training techniques and a novel shape design element for intuitive user interaction elevated the project, making it not just a technical achievement in AI and machine learning, but also a user-friendly tool for real-time emotion detection. This blend of technical sophistication and practical applicability marks a significant step forward in empathetic technology, opening new avenues for how machines understand and interact with human emotions.
 
 7. Future Work
+8. 
 For future enhancements of this emotion detection project, a multifaceted approach could be adopted. Expanding the dataset to include a wider range of emotional expressions, ages, ethnicities, and lighting conditions would greatly enhance the model's accuracy and inclusivity. Delving into advanced neural architectures like Transformers or enhancing real-time processing capabilities through model optimization techniques would further refine performance. Integrating other modalities such as voice or body language analysis could lead to more comprehensive emotion recognition systems. Additionally, focusing on personalization, ethical usage, and robust privacy measures will be essential, especially as the technology finds applications in sensitive domains like mental health and interactive customer service. Lastly, ensuring the model's adaptability across different platforms would make this technology more accessible and versatile in various real-world scenarios.
 
-8. References <br />
+9. References <br />
+
 Emotion Recognition Based on Facial Expressions Using Convolutional Neural Network (CNN) | IEEE Conference Publication | IEEE Xplore. (n.d.). Ieeexplore.ieee.org. Retrieved December 2, 2023, from https://ieeexplore.ieee.org/document/9302866 <br />
 Emotion Detection and Characterization using Facial Features. (n.d.). Ieeexplore.ieee.org. https://ieeexplore.ieee.org/document/8710406  <br />
 Facial Emotion Detection Using Deep Learning. (n.d.). Ieeexplore.ieee.org. https://ieeexplore.ieee.org/document/9154121  <br />
