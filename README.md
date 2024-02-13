@@ -1,4 +1,4 @@
-# Emotion-Detection-using-CNN
+# Advanced-Emotion-Detection-using-CNN-and-OpenCV
 
 TABLE OF CONTENTS
 
@@ -25,8 +25,6 @@ b. Outputs
  <br />
 
 1. Abstract
-
-GitHub Link - https://github.com/Khizar-Baig/CS584-Final-Project
 
 This project involves the development of a Convolutional Neural Network (CNN) to discern human emotions from facial images. The dataset comprises a substantial 35,887 grayscale images categorized into seven emotional states: happiness, sadness, anger, neutrality, surprise, disgust, and fear. The core innovation of this project lies in real-time emotion detection using OpenCV, coupled with a novel shape design element that provides intuitive visual feedback during the interaction.
 
